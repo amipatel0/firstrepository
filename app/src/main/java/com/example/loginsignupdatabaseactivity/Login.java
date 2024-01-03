@@ -74,8 +74,7 @@ public class Login extends AppCompatActivity {
             return true;
         }
     }
-
-        public boolean validatePassword()
+    public boolean validatePassword()
         {
             String val1 = pass.getText().toString();
             if (val1.isEmpty()) {
@@ -104,13 +103,15 @@ public class Login extends AppCompatActivity {
                         String passwordDB=snapshot.child(un).child("password").getValue(String.class);
                         if(!Objects.equals(passwordDB,pa))
                         {
+                            pass.setError("invalid password");
+                            pass.requestFocus();
+
+                        }
+                        else {
                             uname.setError(null);
                             Intent i1=new Intent(Login.this,Welcome.class);
                             startActivity(i1);
-                        }
-                        else {
-                            pass.setError("invalid password");
-                            pass.requestFocus();
+
                         }
                     }
                     else {

@@ -53,7 +53,7 @@ public class SignUp extends AppCompatActivity {
               HelperClass helperClass=new HelperClass(userName1,email1,pass1,contact1);
               databaseReference.child(userName1).setValue(helperClass);
 
-                Toast.makeText(SignUp.this, "You have sugn up successfully", Toast.LENGTH_SHORT).show();
+                Toast.makeText(SignUp.this, "You have sign up successfully", Toast.LENGTH_SHORT).show();
                 Intent i=new Intent(SignUp.this,Login.class);
                 startActivity(i);
             }
